@@ -1,17 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, View } from 'react-native';
+
+import SearchInput from './components/SearchInput';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView style={styles.container} behavior='padding'>
       <Text
-        style={styles.blue}
-      >Open up App.js to start working on your app!</Text>
-      <Text>Changes you make will automatically reload.</Text>
-      <Text>Shake your phone to open the developer menu.</Text>
+        style={[styles.largeText, styles.textStyle]}
+      >San Francisco</Text>
+      <Text
+        style={[styles.smallText, styles.textStyle]}
+      >Light Cloud</Text>
+      <Text
+        style={[styles.largeText, styles.textStyle]}
+      >24°</Text>
+      <SearchInput placeholder='Search any city' />
       <StatusBar style="auto" />
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 
@@ -22,7 +29,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  blue: {
-    color: 'blue',
-  }
+  textStyle: {
+    textAlign: 'center',
+    fontFamily: Platform.OS === 'ios' ? 'AvenirNext-Regular' : 'Roboto',
+  },
+  largeText: {
+    fontSize: 44,
+  },
+  smallText: {
+    fontSize: 18,
+  },
+  textInput: {
+    backgroundColor: '#666',
+    color: 'white',
+    height: 40,
+    width: 300,
+    marginTop: 20,
+    marginHorizontal: 20,
+    paddingHorizontal: 10,
+    alignSelf: 'center',
+  },
 });
