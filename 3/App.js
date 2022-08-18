@@ -19,9 +19,9 @@ export default function App() {
       <ImageBackground
         source={getImageForWeather('Clear')}
         style={styles.imageContainer}
-        imageStyle={styles.image}
+        resizeMode="cover"
       >
-        <View
+        < View
           style={styles.detailsContainer}
         >
           <Text
@@ -35,37 +35,33 @@ export default function App() {
           >24°</Text>
           <SearchInput placeholder='Search any city' />
           <StatusBar style="auto" />
-        </View>
+        </View >
       </ImageBackground>
-    </KeyboardAvoidingView>
+    </KeyboardAvoidingView >
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#34495E',
   },
   detailsContainer: {
-    //flex: 1,
-    justifyContent: 'center',
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: 'rgba(0,0,0,0.2)',
-    //paddingHorizontal: 20,
-    paddingTop: Dimensions.get('screen').height / 2.5,
+    paddingHorizontal: 20,
   },
   imageContainer: {
-    Flex: 1,
-  },
-  image: {
-    Flex: 1,
-    Width: Dimensions.get('screen').width,
-    height: Dimensions.get('screen').height,
-    resizeMode: 'cover',
+    flex: 1,
+    justifyContent: 'center',
+    width: null,
+    height: null,
   },
   textStyle: {
     textAlign: 'center',
     fontFamily: Platform.OS === 'ios' ? 'AvenirNext-Regular' : 'Roboto',
-    color: 'red',
+    color: 'white',
   },
   largeText: {
     fontSize: 44,
