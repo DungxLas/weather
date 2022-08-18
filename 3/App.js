@@ -14,6 +14,9 @@ import SearchInput from './components/SearchInput';
 import getImageForWeather from '../utils/getImageForWeather';
 
 export default function App() {
+
+  const location = 'San Francisco'
+
   return (
     <KeyboardAvoidingView style={styles.container} behavior='padding'>
       <ImageBackground
@@ -26,7 +29,7 @@ export default function App() {
         >
           <Text
             style={[styles.largeText, styles.textStyle]}
-          >San Francisco</Text>
+          >{location}</Text>
           <Text
             style={[styles.smallText, styles.textStyle]}
           >Light Cloud</Text>
